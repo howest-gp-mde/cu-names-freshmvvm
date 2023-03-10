@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Mde.MvvmNames.Mobile.ViewModels"
+             x:Class="Mde.MvvmNames.Mobile.Pages.NamePage"
+             x:DataType="viewModels:NameViewModel"
+             Style="{ StaticResource DefaultPageStyle }">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Persons" Command="{ Binding NavigateToPersonsCommand }" />
+        <ToolbarItem Text="Settings" Command="{ Binding NavigateToSettingsCommand}" />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Entry Placeholder="First name" Text="{ Binding FirstName }" />
+        <Entry Placeholder="Last name" Text="{ Binding LastName }" />
+        <Button Text="Save" Command="{ Binding SaveCommand }" />
+
+        <Button Text="Go To Settings" Command="{ Binding NavigateToSettingsCommand }" />
+
+    </StackLayout>
+
+</ContentPage>

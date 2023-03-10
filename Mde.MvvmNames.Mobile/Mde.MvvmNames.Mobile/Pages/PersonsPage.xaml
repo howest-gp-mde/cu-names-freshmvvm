@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Mde.MvvmNames.Mobile.ViewModels"
+             xmlns:model="clr-namespace:Mde.MvvmNames.Mobile.Domain"
+             Title="Random Persons"
+             x:DataType="viewModels:PersonsViewModel"
+             x:Class="Mde.MvvmNames.Mobile.Pages.PersonsPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <ListView ItemsSource="{Binding Persons}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Person">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="10,0">
+                                <Label
+                                    VerticalOptions="Center"
+                                    FontSize="20"
+                                    Text="{ Binding GivenName }" />
+                                <Label 
+                                    VerticalOptions="Center"
+                                    FontSize="20"
+                                    Text="{ Binding SurName }" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Persons}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Person">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="10,0">
+                                <Label
+                                    VerticalOptions="Center"
+                                    FontSize="20"
+                                    Text="{ Binding GivenName }" />
+                                <Label 
+                                    VerticalOptions="Center"
+                                    FontSize="20"
+                                    Text="{ Binding SurName }" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
